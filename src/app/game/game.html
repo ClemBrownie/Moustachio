@@ -1,0 +1,98 @@
+<ion-content class="game-content">
+  <div class="game-container">
+    <!-- Header minimaliste -->
+    <div class="game-header">
+      <div class="logo-container">
+        <div class="moustache">🎭</div>
+        <h1>Moustachio</h1>
+      </div>
+      <p class="subtitle">Jeu d'alcool avec cartes</p>
+    </div>
+
+    <!-- Stats simples -->
+    <div class="game-stats">
+      <ion-card class="stats-card">
+        <ion-card-content>
+          <div class="stat-container">
+            <div class="stat">
+              <div class="stat-icon">🃏</div>
+              <div class="stat-info">
+                <span class="stat-label">Cartes restantes</span>
+                <span class="stat-value">{{ remainingCards }}</span>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" [style.width.%]="(remainingCards / 52) * 100"></div>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <!-- Zone de carte - focus central -->
+    <div class="card-area">
+      @if (currentCardValue) {
+        <div class="card-wrapper">
+          <ion-card class="drawn-card" [@cardFlip]="'in'">
+            <div class="card-corner top-left">{{ currentCardValue.value }}</div>
+            <div class="card-corner bottom-right">{{ currentCardValue.value }}</div>
+            <ion-card-header>
+              <ion-card-title class="card-title">
+                <span class="card-value">{{ currentCardValue.value }}</span>
+                <span class="card-suit">{{ getSuitSymbol(currentCardValue.suit) }}</span>
+              </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div class="card-rule-container">
+                <p class="card-rule">{{ currentCardValue.rule }}</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      } @else {
+        <div class="card-wrapper">
+          <ion-card class="card-back" (click)="drawCard()">
+            <ion-card-content>
+              <div class="card-back-content">
+                <ion-icon name="play-outline" size="large" class="play-icon"></ion-icon>
+                <p class="card-back-text">Touche pour tirer une carte</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      }
+    </div>
+
+    <!-- CTA principal - zone de focus -->
+    <div class="action-buttons">
+      @if (hasCardsLeft) {
+        <button 
+          (click)="drawCard()"
+          class="draw-button">
+          <ion-icon name="play-outline"></ion-icon>
+          <span>Tirer une carte</span>
+        </button>
+      } @else {
+        <ion-card class="no-cards-card">
+          <ion-card-content>
+            <div class="celebration">
+              <ion-icon name="trophy-outline" size="large"></ion-icon>
+              <h3>Félicitations !</h3>
+              <p>Vous avez terminé le jeu</p>
+              <p class="celebration-subtitle">Toutes les cartes ont été tirées</p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      }
+      
+      <!-- Bouton reset visible -->
+      <button 
+        (click)="resetGame()"
+        class="reset-button">
+        <ion-icon name="refresh-outline"></ion-icon>
+        <span>Nouveau jeu</span>
+      </button>
+    </div>
+
+  </div>
+</ion-content>

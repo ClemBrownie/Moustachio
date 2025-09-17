@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">moustachio</string>
+    <string name="title_activity_main">moustachio</string>
+    <string name="package_name">com.moustachio.app</string>
+    <string name="custom_url_scheme">com.moustachio.app</string>
+</resources>
