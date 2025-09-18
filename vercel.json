@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:prod",
+  "buildCommand": "./build.sh",
   "outputDirectory": "dist/moustachio",
   "installCommand": "npm install",
   "framework": "angular",
@@ -16,6 +16,11 @@
   "build": {
     "env": {
       "NODE_ENV": "production"
+    }
+  },
+  "functions": {
+    "src/app/**/*.ts": {
+      "runtime": "nodejs18.x"
     }
   }
 }
