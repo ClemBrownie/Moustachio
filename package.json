@@ -7,6 +7,7 @@
     "build": "npx ng build",
     "build:prod": "npx ng build --configuration production",
     "build:vercel": "npx ng build --configuration production --output-path dist/moustachio",
+    "vercel-build": "npx ng build --configuration production",
     "watch": "npx ng build --watch --configuration development",
     "test": "npx ng test",
     "cap:sync": "npx cap sync",

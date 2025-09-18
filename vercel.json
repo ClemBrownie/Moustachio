@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "./build.sh",
+  "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist/moustachio",
   "installCommand": "npm install",
   "framework": "angular",
@@ -12,15 +12,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
-  "functions": {
-    "src/app/**/*.ts": {
-      "runtime": "nodejs18.x"
-    }
   }
 }
