@@ -24,11 +24,22 @@
 
   .logo-container {
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 
-    .moustache {
-      font-size: 2.5rem;
-      display: block;
-      margin-bottom: 8px;
+    .app-logo {
+      width: 48px;
+      height: 48px;
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      transition: transform 150ms ease-out;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
     }
 
     h1 {
@@ -348,6 +359,35 @@
           font-style: italic;
         }
       }
+    }
+  }
+}
+
+// Liens légaux
+.legal-links {
+  text-align: center;
+  margin-top: 24px;
+  padding: 16px 0;
+  border-top: 1px solid #e2e8f0;
+
+  .legal-link {
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 150ms ease-out;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+
+    &:hover {
+      color: #dc143c;
+      background-color: #f8fafc;
+    }
+
+    &:focus {
+      outline: 2px solid #dc143c;
+      outline-offset: 2px;
     }
   }
 }

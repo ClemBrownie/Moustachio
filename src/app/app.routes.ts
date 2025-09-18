@@ -8,5 +8,9 @@ export const routes: Routes = [
   {
     path: 'game',
     loadComponent: () => import('./game/game').then(m => m.Game)
+  },
+  {
+    path: 'privacy',
+    loadComponent: () => import('./privacy/privacy').then(m => m.PrivacyComponent)
   }
 ];

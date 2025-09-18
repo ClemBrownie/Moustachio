@@ -1,0 +1,12 @@
+# Fichiers à ignorer lors du déploiement Vercel
+node_modules
+.git
+.angular
+dist
+android
+*.log
+.DS_Store
+.vscode
+.idea
+coverage
+.nyc_output

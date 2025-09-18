@@ -1,7 +1,8 @@
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { IonContent, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonIcon, IonFab, IonFabButton } from '@ionic/angular/standalone';
+import { IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonIcon } from '@ionic/angular/standalone';
 import { playOutline, refreshOutline, trophyOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 
@@ -14,7 +15,7 @@ export interface Card {
 
 @Component({
   selector: 'app-game',
-  imports: [CommonModule, IonContent, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonIcon, IonFab, IonFabButton],
+  imports: [CommonModule, RouterModule, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonIcon],
   templateUrl: './game.html',
   styleUrl: './game.scss',
   standalone: true,
